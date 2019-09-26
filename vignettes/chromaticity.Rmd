@@ -1,0 +1,125 @@
+---
+title: "chromaticity"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{chromaticity}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  echo = FALSE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(chromaticity)
+library(ggplot2)
+
+gphtheme <- theme(axis.title.y = element_text(margin = margin(r = 10)),
+                  axis.title.x = element_text(margin = margin(t = 10)),
+                  axis.line = element_line(size = 0.5),
+                  axis.ticks = element_blank(),
+                  legend.title = element_blank(),
+                  legend.text = element_text(hjust=0.1),
+                  legend.key = element_blank(),
+                  legend.position = "bottom",
+                  legend.spacing = unit(1.0,"cm"),
+                  legend.key.size = unit(1.5,"lines"),
+                  plot.margin=grid::unit(c(10,10,5,5), "mm"),
+                  panel.grid.major.y = element_line(size = 0.25,color="grey70"),
+                  panel.grid.minor.y = element_line(size = 0.25,color="grey70"),
+                  panel.grid.major.x = element_blank(),
+                  panel.grid.minor.x = element_blank(),
+                  panel.background = element_blank(),
+                  strip.background = element_blank()) 
+```
+
+The purpose of this package is to ensure that color palettes are optimized for the number of colors selected by the user. For each of the four palettes provided by `color_pickr`, a different subset of the colors is returned based on the number of colors selected by the user. Examples of the color palettes are provided in the following sections.
+
+### Jalama
+
+```{r}
+for (xx in 1:10) {
+
+    test <- data.frame(variable = factor(1:xx, levels = 1:xx), value = 1)
+
+    print(
+      ggplot(test, aes(variable, value, fill = variable)) +
+        geom_bar(stat = "identity") +
+        scale_fill_manual(values = color_pickr(xx, "Jalama")) +
+        gphtheme +
+        theme(legend.position = "none") +
+        labs(x = NULL, y = NULL)
+      
+    )
+
+}
+```
+
+
+
+### Refugio
+
+```{r}
+for (xx in 1:7) {
+
+    test <- data.frame(variable = factor(1:xx, levels = 1:xx), value = 1)
+
+    print(
+      ggplot(test, aes(variable, value, fill = variable)) +
+        geom_bar(stat = "identity") +
+        scale_fill_manual(values = color_pickr(xx, "Refugio")) +
+        gphtheme +
+        theme(legend.position = "none") +
+        labs(x = NULL, y = NULL)
+      
+    )
+
+}
+```
+
+### Rincon
+
+```{r}
+for (xx in 1:7) {
+
+    test <- data.frame(variable = factor(1:xx, levels = 1:xx), value = 1)
+
+    print(
+      ggplot(test, aes(variable, value, fill = variable)) +
+        geom_bar(stat = "identity") +
+        scale_fill_manual(values = color_pickr(xx, "Rincon")) +
+        gphtheme +
+        theme(legend.position = "none") +
+        labs(x = NULL, y = NULL)
+      
+    )
+
+}
+```
+
+### El Capitan
+
+```{r}
+for (xx in 1:9) {
+
+    test <- data.frame(variable = factor(1:xx, levels = 1:xx), value = 1)
+
+    print(
+      ggplot(test, aes(variable, value, fill = variable)) +
+        geom_bar(stat = "identity") +
+        scale_fill_manual(values = color_pickr(xx, "El Capitan")) +
+        gphtheme +
+        theme(legend.position = "none") +
+        labs(x = NULL, y = NULL)
+      
+    )
+
+}
+```
+
+

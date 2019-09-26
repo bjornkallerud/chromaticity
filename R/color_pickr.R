@@ -1,5 +1,15 @@
-
-
+#' Color Picker
+#'
+#' This function returns a palette of colors optimized for the requested number of colors
+#'
+#' @param n the number of colors needed for the palette
+#' @param palette string name of the palette to draw colors from, "Jalama", "Refugio", "Rincon", or "El Capitan"
+#'
+#' @return This function returns a \code{vector} of hex color codes
+#'
+#' @author Bjorn Kallerud
+#'
+#' @export
 color_pickr <- function(n, palette) {
 
   if (palette == "Jalama") {
@@ -33,8 +43,8 @@ color_pickr <- function(n, palette) {
     if (n == 1 ) {p = "#E4A438"}
     if (n == 2 ) {p = c("#E4A438", "#785539")}
     if (n == 3 ) {p = c("#E05625", "#E4A438", "#785539")}
-    if (n == 4 ) {p = c("#E05625", "#E4A438", "#785539", "#A0AB66")}
-    if (n == 5 ) {p = c("#E05625", "#E4A438", "#785539", "#A0AB66", "#C3B090")}
+    if (n == 4 ) {p = c("#E05625", "#E4A438", "#785539", "#C3B090")}
+    if (n == 5 ) {p = c("#E05625", "#E4A438", "#785539", "#C3B090", "#029084")}
     if (n == 6 ) {p = c("#E05625", "#E4A438", "#785539", "#A0AB66", "#C3B090", "#029084")}
     if (n == 7 ) {p = c("#E05625", "#E4A438", "#785539", "#A0AB66", "#C3B090", "#029084", "#6D6E73")}
 
