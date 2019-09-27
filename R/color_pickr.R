@@ -10,7 +10,23 @@
 #' @author Bjorn Kallerud
 #'
 #' @export
-color_pickr <- function(n, palette) {
+color_pickr <- function(n, palette = "Jalama") {
+
+  if (palette == "Naples") {
+
+    p = c(rgb(50,105,133, maxColorValue = 255),
+             rgb(210,92,55, maxColorValue = 255),
+             rgb(77,78,94, maxColorValue = 255),
+             rgb(186,207,74, maxColorValue = 255),
+             rgb(200,157,15, maxColorValue = 255),
+             rgb(195,222,229, maxColorValue = 255),
+             rgb(163,55,32, maxColorValue = 255),
+             rgb(88,129,51, maxColorValue = 255),
+             rgb(101,85,77, maxColorValue = 255),
+             rgb(200,166,106, maxColorValue = 255))
+
+
+  }
 
   if (palette == "Jalama") {
 
@@ -60,6 +76,10 @@ color_pickr <- function(n, palette) {
     if (n == 7 ) {p = c("#C4D4D6", "#9CB8BB", "#759CA0", "#4E8085", "#27646B", "#205258", "#194045")}
     if (n == 8 ) {p = c("#EBF0F1", "#C4D4D6", "#9CB8BB", "#759CA0", "#4E8085", "#27646B", "#205258", "#194045")}
     if (n == 9 ) {p = c("#EBF0F1", "#C4D4D6", "#9CB8BB", "#759CA0", "#4E8085", "#27646B", "#205258", "#194045", "#122E31")}
+  }
+
+  if ((palette == "Jalama" & n > 10) | (palette == "Refugio" & n > 7) |(palette == "Rincon" & n > 7) |(palette == "El Capitan" & n > 9)) {
+    stop("This palette does not support this many color options.")
   }
 
   return(p)
