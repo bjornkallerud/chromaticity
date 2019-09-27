@@ -1,2 +1,2 @@
 # chromaticity
-Dynamic color palettes
+Standardize aesthetics for reporting
