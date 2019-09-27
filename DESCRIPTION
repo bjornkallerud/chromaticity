@@ -1,10 +1,10 @@
 Package: chromaticity
 Type: Package
-Title: Dynamic color palettes
+Title: Standardize aesthetics for reports
 Version: 0.1.0
 Author: Bjorn Kallerud
 Maintainer: <bjorn@rdniehaus.com>
-Description: This package provides color palettes that are optimized for the number of colors selected by the user
+Description: This package provides functions that standardize and automate aesthetic components of reporting
 License: LICENSE
 Encoding: UTF-8
 LazyData: true
