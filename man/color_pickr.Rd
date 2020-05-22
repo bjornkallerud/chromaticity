@@ -4,12 +4,12 @@
 \alias{color_pickr}
 \title{Color Picker}
 \usage{
-color_pickr(n, palette)
+color_pickr(n, palette = "Jalama")
 }
 \arguments{
 \item{n}{the number of colors needed for the palette}
 
-\item{palette}{string name of the palette to draw colors from, "Jalama", "Refugio", "Rincon", or "El Capitan"}
+\item{palette}{string name of the palette to draw colors from, "Jalama", "Refugio", "Rincon", "Naples", or "El Capitan"}
 }
 \value{
 This function returns a \code{vector} of hex color codes
