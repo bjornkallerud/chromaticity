@@ -3,7 +3,7 @@
 #' This function returns a palette of colors optimized for the requested number of colors
 #'
 #' @param n the number of colors needed for the palette
-#' @param palette string name of the palette to draw colors from, "Jalama", "Refugio", "Rincon", or "El Capitan"
+#' @param palette string name of the palette to draw colors from, "Jalama", "Refugio", "Rincon", "Naples", or "El Capitan"
 #'
 #' @return This function returns a \code{vector} of hex color codes
 #'
@@ -11,22 +11,6 @@
 #'
 #' @export
 color_pickr <- function(n, palette = "Jalama") {
-
-  if (palette == "Naples") {
-
-    p = c(rgb(50,105,133, maxColorValue = 255),
-             rgb(210,92,55, maxColorValue = 255),
-             rgb(77,78,94, maxColorValue = 255),
-             rgb(186,207,74, maxColorValue = 255),
-             rgb(200,157,15, maxColorValue = 255),
-             rgb(195,222,229, maxColorValue = 255),
-             rgb(163,55,32, maxColorValue = 255),
-             rgb(88,129,51, maxColorValue = 255),
-             rgb(101,85,77, maxColorValue = 255),
-             rgb(200,166,106, maxColorValue = 255))
-
-
-  }
 
   if (palette == "Jalama") {
 
@@ -43,26 +27,35 @@ color_pickr <- function(n, palette = "Jalama") {
 
   }
 
+  if (palette == "Naples") {
+
+    if (n == 1 ) {p = "#D25C37"}
+    if (n == 2 ) {p = c("#D25C37", "#4D4E5E")}
+    if (n == 3 ) {p = c("#D25C37", "#4D4E5E", "#BACF4A")}
+    if (n == 4 ) {p = c("#D25C37", "#4D4E5E", "#BACF4A", "#326985")}
+    if (n == 5 ) {p = c("#D25C37", "#4D4E5E", "#BACF4A", "#326985", "#C8A66A")}
+
+  }
+
   if (palette == "Refugio") {
 
     if (n == 1 ) {p = "#e8ae61"}
-    if (n == 2 ) {p = c("#e8ae61", "#c5cfba")}
-    if (n == 3 ) {p = c("#e8ae61", "#CCC7B9", "#653239")}
-    if (n == 4 ) {p = c("#e8ae61", "#AF7A6D", "#653239", "#AA8F66")}
-    if (n == 5 ) {p = c("#c5cfba", "#e8ae61", "#AF7A6D", "#653239", "#AA8F66")}
-    if (n == 6 ) {p = c("#c5cfba", "#e8ae61", "#AF7A6D", "#653239", "#6A7186", "#AA8F66")}
-    if (n == 7 ) {p = c("#CCC7B9", "#c5cfba", "#e8ae61", "#AF7A6D", "#653239", "#6A7186", "#AA8F66")}
+    if (n == 2 ) {p = c("#e8ae61", "#cCC7B9")}
+    if (n == 3 ) {p = c("#e8ae61", "#cCC7B9", "#653239")}
+    if (n == 4 ) {p = c("#e8ae61", "#cCC7B9", "#653239", "#6A7186")}
+    if (n == 5 ) {p = c("#e8ae61", "#cCC7B9", "#AF7A6D", "#6A7186", "#AA8F66")}
+    if (n == 6 ) {p = c("#e8ae61", "#cCC7B9", "#AF7A6D", "#6A7186", "#AA8F66", "#AF7A6D" )}
 
   }
 
   if (palette == "Rincon") {
-    if (n == 1 ) {p = "#E4A438"}
-    if (n == 2 ) {p = c("#E4A438", "#785539")}
-    if (n == 3 ) {p = c("#E05625", "#E4A438", "#785539")}
-    if (n == 4 ) {p = c("#E05625", "#E4A438", "#785539", "#C3B090")}
-    if (n == 5 ) {p = c("#E05625", "#E4A438", "#785539", "#C3B090", "#029084")}
-    if (n == 6 ) {p = c("#E05625", "#E4A438", "#785539", "#A0AB66", "#C3B090", "#029084")}
-    if (n == 7 ) {p = c("#E05625", "#E4A438", "#785539", "#A0AB66", "#C3B090", "#029084", "#6D6E73")}
+    if (n == 1 ) {p = "#029084"}
+    if (n == 2 ) {p = c("#029084", "#6D6E73")}
+    if (n == 3 ) {p = c("#029084", "#6D6E73", "#e4a438")}
+    if (n == 4 ) {p = c("#029084", "#6D6E73", "#e4a438", "#a0ab66")}
+    if (n == 5 ) {p = c("#029084", "#6D6E73", "#e4a438", "#a0ab66", "#785539")}
+    if (n == 6 ) {p = c("#029084", "#6D6E73", "#e4a438", "#a0ab66", "#785539", "#c3b090")}
+    if (n == 7 ) {p = c("#029084", "#6D6E73", "#e4a438", "#a0ab66", "#785539", "#c3b090", "#e05625")}
 
   }
 
@@ -78,7 +71,7 @@ color_pickr <- function(n, palette = "Jalama") {
     if (n == 9 ) {p = c("#EBF0F1", "#C4D4D6", "#9CB8BB", "#759CA0", "#4E8085", "#27646B", "#205258", "#194045", "#122E31")}
   }
 
-  if ((palette == "Jalama" & n > 10) | (palette == "Refugio" & n > 7) |(palette == "Rincon" & n > 7) |(palette == "El Capitan" & n > 9)) {
+  if ((palette == "Jalama" & n > 10) | (palette == "Refugio" & n > 6) |(palette == "Rincon" & n > 7) |(palette == "El Capitan" & n > 9) |(palette == "Naples" & n > 5)) {
     stop("This palette does not support this many color options.")
   }
 

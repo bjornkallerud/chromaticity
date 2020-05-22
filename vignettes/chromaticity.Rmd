@@ -70,12 +70,31 @@ for (xx in 1:10) {
 }
 ```
 
+### Naples
+
+```{r}
+for (xx in 1:5) {
+
+    test <- data.frame(variable = factor(1:xx, levels = 1:xx), value = 1)
+
+    print(
+      ggplot(test, aes(variable, value, fill = variable)) +
+        geom_bar(stat = "identity") +
+        scale_fill_manual(values = color_pickr(xx, "Naples")) +
+        themer() +
+        theme(legend.position = "none") +
+        labs(x = NULL, y = NULL)
+      
+    )
+
+}
+```
 
 
 ### Refugio
 
 ```{r}
-for (xx in 1:7) {
+for (xx in 1:6) {
 
     test <- data.frame(variable = factor(1:xx, levels = 1:xx), value = 1)
 
