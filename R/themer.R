@@ -2,15 +2,16 @@
 #'
 #' This function automates and standardizes a ggplot2 theme
 #'
-#' @param n the number of colors needed for the palette
-#' @param palette string name of the palette to draw colors from, "Jalama", "Refugio", "Rincon", or "El Capitan"
+#' @param font_size adjust plot font size
+#' @param box determines whether or not there is a box around the plot
+#' @param flipped set to TRUE if you are using coord_flip
 #'
 #' @return This function returns a \code{vector} of hex color codes
 #'
 #' @author Bjorn Kallerud
 #'
 #' @export
-themer <- function(font_size = 12, box = T) {
+themer <- function(font_size = 12, box = T, flipped = F) {
 
   thm <- theme(
     text = element_text(size = font_size),
@@ -25,10 +26,10 @@ themer <- function(font_size = 12, box = T) {
     legend.spacing = unit(1.0,"cm"),
     legend.key.size = unit(1.5,"lines"),
     plot.margin=grid::unit(c(10, 10, 5, 5), "mm"),
-    panel.grid.major.y = element_line(size = 0.25, color="grey70"),
-    panel.grid.minor.y = element_line(size = 0.25, color="grey70"),
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor.x = element_blank(),
+    panel.grid.major.y = if (flipped == F) {element_line(size = 0.25, color="grey70")} else {element_blank()},
+    panel.grid.minor.y = if (flipped == F) {element_line(size = 0.25, color="grey70")} else {element_blank()},
+    panel.grid.major.x = if (flipped == F) {element_blank()} else {element_line(size = 0.25, color="grey70")},
+    panel.grid.minor.x = if (flipped == F) {element_blank()} else {element_line(size = 0.25, color="grey70")},
     panel.background = element_blank(),
     plot.background = element_rect(size = 1, colour = ifelse(box == T, "grey50", rgb(1, 0, 0, alpha = 0))),
     strip.background = element_blank())

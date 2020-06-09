@@ -4,12 +4,14 @@
 \alias{themer}
 \title{Theme for ggplot2}
 \usage{
-themer(font_size = 12, box = T)
+themer(font_size = 12, box = T, flipped = F)
 }
 \arguments{
-\item{n}{the number of colors needed for the palette}
+\item{font_size}{adjust plot font size}
 
-\item{palette}{string name of the palette to draw colors from, "Jalama", "Refugio", "Rincon", or "El Capitan"}
+\item{box}{determines whether or not there is a box around the plot}
+
+\item{flipped}{set to TRUE if you are using coord_flip}
 }
 \value{
 This function returns a \code{vector} of hex color codes

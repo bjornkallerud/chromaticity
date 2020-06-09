@@ -43,7 +43,7 @@ color_pickr <- function(n, palette = "Jalama") {
     if (n == 3 ) {p = c("#e8ae61", "#cCC7B9", "#653239")}
     if (n == 4 ) {p = c("#e8ae61", "#cCC7B9", "#653239", "#6A7186")}
     if (n == 5 ) {p = c("#e8ae61", "#cCC7B9", "#AF7A6D", "#6A7186", "#AA8F66")}
-    if (n == 6 ) {p = c("#e8ae61", "#cCC7B9", "#AF7A6D", "#6A7186", "#AA8F66", "#AF7A6D" )}
+    if (n == 6 ) {p = c("#e8ae61", "#cCC7B9", "#AF7A6D", "#6A7186", "#AA8F66", "#74ad97" )}
 
   }
 
